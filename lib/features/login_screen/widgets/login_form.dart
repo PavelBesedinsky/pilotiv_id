@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pilotiv_id/features/login/presentation/widgets/login_btn.dart';
-import 'package:pilotiv_id/features/login/presentation/widgets/login_btn_styles.dart';
+import 'package:pilotiv_id/features/login_screen/widgets/widgets.dart';
 
-///
 /// Форма логина и пароля.
-///
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key, required this.btnTitle, this.onSubmit});
 

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:pilotiv_id/features/login/presentation/presentation.dart';
+import 'package:pilotiv_id/features/login_screen/login_screen_web_view_model.dart';
+import 'package:pilotiv_id/features/login_screen/widgets/widgets.dart';
 import 'package:provider/provider.dart';
 
-class LoginViewWeb extends StatefulWidget {
-  const LoginViewWeb({super.key});
+class LoginScreenWebView extends StatefulWidget {
+  const LoginScreenWebView({super.key});
 
   @override
-  State<LoginViewWeb> createState() => _LoginViewWebState();
+  State<LoginScreenWebView> createState() => _LoginScreenWebViewState();
 }
 
-class _LoginViewWebState extends State<LoginViewWeb> {
-  LoginBloc get bloc => Provider.of<LoginBloc>(context, listen: false);
+class _LoginScreenWebViewState extends State<LoginScreenWebView> {
+  LoginScreenWebViewModel get bloc => Provider.of<LoginScreenWebViewModel>(context, listen: false);
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +33,13 @@ class _LoginViewWebState extends State<LoginViewWeb> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 LoginForm(
-                  btnTitle: bloc.signIn,
+                  btnTitle: bloc.signInCaption,
                   onSubmit: () => (),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0),
                   child: LoginBtn(
-                    btnTitle: bloc.signInVk,
+                    btnTitle: bloc.signInVkCaption,
                     onPressed: bloc.authorizeAsync,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: bloc.signInVkButtonBackgroundColor(),
@@ -51,7 +52,7 @@ class _LoginViewWebState extends State<LoginViewWeb> {
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 5.0),
                   child: LoginBtn(
-                    btnTitle: bloc.signUp,
+                    btnTitle: bloc.signUpCaption,
                     onPressed: () => (),
                     style: ElevatedButton.styleFrom(
                       shape: elevatedButtonShape,

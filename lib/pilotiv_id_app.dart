@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pilotiv_id/core/di/injection.dart';
 import 'package:pilotiv_id/core/themes/themes.dart';
-
-import 'features/login/presentation/presentation.dart';
+import 'package:pilotiv_id/features/login_screen/login_screen.dart';
+import 'package:pilotiv_id/features/login_screen/login_screen_model.dart';
+import 'package:provider/provider.dart';
 
 class PilotivIdApp extends StatelessWidget {
   const PilotivIdApp({super.key});
@@ -40,8 +42,11 @@ class PilotivIdApp extends StatelessWidget {
                     GoRoute(
                         path: 'login',
                         builder: (BuildContext context, GoRouterState state) {
-                          return Login(
-                            state: state,
+                          return ChangeNotifierProvider(
+                            create: (_) => injector.get<LoginScreenModel>(),
+                            child: LoginScreen(
+                              state: state,
+                            ),
                           );
                         }),
                   ])

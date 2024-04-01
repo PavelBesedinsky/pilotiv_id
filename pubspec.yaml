@@ -14,18 +14,20 @@ dependencies:
   flutter_web_plugins:
     sdk: flutter
 
-  freezed: ^2.4.7
-  provider: ^6.1.2
-  go_router: ^13.2.1
-  url_launcher: ^6.2.5
-  get_it: ^7.6.7
-  injectable: ^2.3.2
+  freezed: ^2.4.7 # code generation for immutable classes that has a simple syntax/API without compromising on the features.
+  provider: ^6.1.2 # a wrapper around InheritedWidget to make them easier to use and more reusable.
+  go_router: ^13.2.1 # a declarative router for Flutter based on Navigation 2 supporting deep linking, data-driven routes and more.
+  url_launcher: ^6.2.5 # flutter plugin for launching a URL.
+  get_it: ^7.6.7 # simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere.
+  injectable: ^2.3.2 # a code generator for get_it.
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^3.0.0
+
+  build_runner: ^2.4.8 # provides a concrete way of generating files using Dart code.
+  injectable_generator: ^2.6.1 # a generator for injectable library.
 
 flutter:
   uses-material-design: true

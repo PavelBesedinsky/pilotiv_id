@@ -40,7 +40,7 @@ class _LoginFormState extends State<LoginForm> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 3),
+          padding: const EdgeInsets.symmetric(vertical: 3.0),
           child: TextFormField(
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
@@ -53,7 +53,7 @@ class _LoginFormState extends State<LoginForm> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 3),
+          padding: const EdgeInsets.symmetric(vertical: 3.0),
           child: TextFormField(
             keyboardType: TextInputType.text,
             obscureText: _isPasswordHidden,

@@ -35,22 +35,28 @@ class _LoginViewWebState extends State<LoginViewWeb> {
                   btnTitle: bloc.signIn,
                   onSubmit: () => (),
                 ),
-                LoginBtn(
-                  btnTitle: bloc.signInVk,
-                  onPressed: bloc.authorizeAsync,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: bloc.signInVkButtonBackgroundColor(),
-                    foregroundColor: bloc.signInVkButtonForegroundColor(),
-                    shape: elevatedButtonShape,
-                    textStyle: elevatedButtonTextStyle,
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: LoginBtn(
+                    btnTitle: bloc.signInVk,
+                    onPressed: bloc.authorizeAsync,
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: bloc.signInVkButtonBackgroundColor(),
+                      foregroundColor: bloc.signInVkButtonForegroundColor(),
+                      shape: elevatedButtonShape,
+                      textStyle: elevatedButtonTextStyle,
+                    ),
                   ),
                 ),
-                LoginBtn(
-                  btnTitle: bloc.signUp,
-                  onPressed: () => (),
-                  style: ElevatedButton.styleFrom(
-                    shape: elevatedButtonShape,
-                    textStyle: elevatedButtonTextStyle,
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5.0),
+                  child: LoginBtn(
+                    btnTitle: bloc.signUp,
+                    onPressed: () => (),
+                    style: ElevatedButton.styleFrom(
+                      shape: elevatedButtonShape,
+                      textStyle: elevatedButtonTextStyle,
+                    ),
                   ),
                 )
               ],

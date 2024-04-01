@@ -40,7 +40,7 @@ class _LoginScreenWebViewState extends State<LoginScreenWebView> {
                   padding: const EdgeInsets.symmetric(vertical: 5.0),
                   child: LoginBtn(
                     btnTitle: bloc.signInVkCaption,
-                    onPressed: bloc.authorizeAsync,
+                    onPressed: bloc.authorizeVkAsync,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: bloc.signInVkButtonBackgroundColor(),
                       foregroundColor: bloc.signInVkButtonForegroundColor(),

@@ -20,6 +20,7 @@ dependencies:
   url_launcher: ^6.2.5 # flutter plugin for launching a URL.
   get_it: ^7.6.7 # simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere.
   injectable: ^2.3.2 # a code generator for get_it.
+  json_annotation: ^4.8.1 # classes and helper functions that support JSON code generation via the `json_serializable` package.
 
 dev_dependencies:
   flutter_test:
@@ -28,6 +29,7 @@ dev_dependencies:
 
   build_runner: ^2.4.8 # provides a concrete way of generating files using Dart code.
   injectable_generator: ^2.6.1 # a generator for injectable library.
+  json_serializable: ^6.7.1 # automatically generate code for converting to and from JSON by annotating Dart classes.
 
 flutter:
   uses-material-design: true

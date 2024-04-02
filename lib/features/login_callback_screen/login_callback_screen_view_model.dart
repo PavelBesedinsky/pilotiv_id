@@ -22,11 +22,6 @@ class LoginCallbackScreenViewModel extends BaseViewModel {
       return false;
     }
 
-    var stateValue = state.uri.queryParameters['state'];
-    if (stateValue != 'vk') {
-      return false;
-    }
-
     final codeValue = state.uri.queryParameters['code'];
     if (codeValue == null || codeValue.isEmpty) {
       return false;

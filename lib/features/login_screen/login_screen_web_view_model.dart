@@ -18,9 +18,8 @@ class LoginScreenWebViewModel extends BaseViewModel {
     const redirectUri = 'https://id.pilotiv.keenetic.link/callback';
     const scope = 'email';
     const responseType = 'code';
-    const state = 'vk';
 
-    return 'client_id=$clientId&display=$display&redirect_uri=$redirectUri&scope=$scope&response_type=$responseType&state=$state&v=5.131';
+    return 'client_id=$clientId&display=$display&redirect_uri=$redirectUri&scope=$scope&response_type=$responseType&v=5.131';
   }
 
   Uri _getOauthVkAuthorizeUri() {
@@ -30,7 +29,7 @@ class LoginScreenWebViewModel extends BaseViewModel {
 
   Uri _getMockOauthVkAuthorizeUri() {
     return Uri.parse(
-        'http://192.168.1.100:777/callback?code=714cd535a56a3ede6b&state=vk');
+        'http://192.168.1.100:777/callback?code=714cd535a56a3ede6b');
   }
 
   // Выполнение авторизации.

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:pilotiv_id/core/domain/widget_models/base_widget_model.dart';
+import 'package:pilotiv_id/core/domain/view_models/base_view_model.dart';
 import 'package:pilotiv_id/core/themes/themes.dart';
 import 'package:pilotiv_id/features/login_screen/login_screen_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class LoginScreenWebViewModel extends BaseWidgetModel {
+class LoginScreenWebViewModel extends BaseViewModel {
   final BuildContext context;
   final GoRouterState state;
   final LoginScreenModel model;
@@ -47,11 +47,12 @@ class LoginScreenWebViewModel extends BaseWidgetModel {
   String _getOauthVkAuthorizeQuery() {
     const clientId = 51890161;
     const display = 'page';
-    const redirectUri = 'https://client.pilotiv.keenetic.link/login';
+    const redirectUri = 'https://id.pilotiv.keenetic.link/callback';
     const scope = 'email';
     const responseType = 'code';
+    const state = 'vk';
 
-    return 'client_id=$clientId&display=$display&redirect_uri=$redirectUri&scope=$scope&response_type=$responseType&state=oauthvk&v=5.131';
+    return 'client_id=$clientId&display=$display&redirect_uri=$redirectUri&scope=$scope&response_type=$responseType&state=$state&v=5.131';
   }
 
   Uri _getOauthVkAuthorizeUri() {
@@ -61,7 +62,7 @@ class LoginScreenWebViewModel extends BaseWidgetModel {
 
   Uri _getMockOauthVkAuthorizeUri() {
     return Uri.parse(
-        'http://192.168.1.100:777/login?code=714cd535a56a3ede6b&state=oauthvk');
+        'http://192.168.1.100:777/callback?code=714cd535a56a3ede6b&state=oauthvk');
   }
 
   // Выполнение авторизации.

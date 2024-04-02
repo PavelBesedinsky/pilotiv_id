@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Базовый класс модели бизнес логики.
-abstract class BaseWidgetModel {
+abstract class BaseViewModel {
   /// Метод инициализации модели бизнес логики.
   @mustCallSuper
   void init() {}

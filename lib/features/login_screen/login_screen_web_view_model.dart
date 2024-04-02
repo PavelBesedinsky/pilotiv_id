@@ -10,39 +10,7 @@ class LoginScreenWebViewModel extends BaseViewModel {
   final GoRouterState state;
   final LoginScreenModel model;
 
-  LoginScreenWebViewModel(this.context, this.state, this.model) {
-    if (_isOauthVkRedirect()) {
-      _handleOauthVkRedirect();
-    }
-  }
-
-  bool _isOauthVkRedirect() {
-    if (state.uri.queryParameters.isEmpty) {
-      return false;
-    }
-
-    var stateValue = state.uri.queryParameters['state'];
-    if (stateValue != 'oauthvk') {
-      return false;
-    }
-
-    final codeValue = state.uri.queryParameters['code'];
-    if (codeValue == null || codeValue.isEmpty) {
-      return false;
-    }
-
-    return true;
-  }
-
-  void _handleOauthVkRedirect() {
-    final codeValue = state.uri.queryParameters['code'];
-    if (codeValue == null || codeValue.isEmpty) {
-      context.go('login');
-      return;
-    }
-
-    print('Авторизация');
-  }
+  LoginScreenWebViewModel(this.context, this.state, this.model);
 
   String _getOauthVkAuthorizeQuery() {
     const clientId = 51890161;
@@ -62,7 +30,7 @@ class LoginScreenWebViewModel extends BaseViewModel {
 
   Uri _getMockOauthVkAuthorizeUri() {
     return Uri.parse(
-        'http://192.168.1.100:777/callback?code=714cd535a56a3ede6b&state=oauthvk');
+        'http://192.168.1.100:777/callback?code=714cd535a56a3ede6b&state=vk');
   }
 
   // Выполнение авторизации.
